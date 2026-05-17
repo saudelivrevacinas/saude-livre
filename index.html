@@ -1,0 +1,1288 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Saúde Livre | Clínica de Vacinação</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+<style>
+/* ========================= */
+/* INSTAGRAM FLOAT */
+/* ========================= */
+
+.instagram-float{
+
+    position:fixed;
+
+    right:25px;
+
+    bottom:115px;
+
+    width:78px;
+
+    height:78px;
+
+    border-radius:50%;
+
+    background:
+    linear-gradient(
+    135deg,
+    #833ab4,
+    #fd1d1d,
+    #fcb045
+    );
+
+    color:white;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-decoration:none;
+
+    font-size:36px;
+
+    box-shadow:
+    0 18px 40px rgba(0,0,0,0.25);
+
+    z-index:999;
+
+    transition:0.4s;
+
+}
+
+.instagram-float:hover{
+
+    transform:
+    scale(1.12);
+
+}
+/* ========================= */
+/* RESET */
+/* ========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#eef7fc;
+    color:#08283a;
+    overflow-x:hidden;
+}
+
+/* ========================= */
+/* SCROLL */
+/* ========================= */
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#0ea5e9;
+    border-radius:50px;
+}
+
+/* ========================= */
+/* HEADER */
+/* ========================= */
+
+header{
+
+    position:fixed;
+
+    top:0;
+
+    width:100%;
+
+    z-index:999;
+
+    background:rgba(3,15,30,0.80);
+
+    backdrop-filter:blur(15px);
+
+    border-bottom:
+    1px solid rgba(255,255,255,0.08);
+
+}
+
+nav{
+
+    max-width:1450px;
+
+    margin:auto;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:18px 25px;
+
+}
+
+.logo img{
+    height:72px;
+}
+
+.menu{
+
+    display:flex;
+
+    gap:35px;
+
+}
+
+.menu a{
+
+    color:white;
+
+    text-decoration:none;<section id="contato">
+
+    font-weight:500;
+
+    transition:0.3s;
+
+}
+
+.menu a:hover{
+    color:#38bdf8;
+}
+
+/* ========================= */
+/* HERO */
+/* ========================= */
+
+.hero{
+
+    min-height:100vh;
+
+    background:
+    linear-gradient(rgba(0,15,30,0.84),rgba(0,15,30,0.84)),
+    url('https://images.unsplash.com/photo-1584515933487-779824d29309?q=80&w=1600&auto=format&fit=crop');
+
+    background-size:cover;
+
+    background-position:center;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    padding:160px 20px 120px;
+
+}
+
+.hero-content{
+
+    max-width:980px;
+
+    animation:fadeUp 1s ease;
+
+}
+
+.hero h1{
+
+    font-size:78px;
+
+    line-height:1.05;
+
+    color:white;
+
+    margin-bottom:28px;
+
+    font-weight:800;
+
+}
+
+.hero span{
+    color:#38bdf8;
+}
+
+.hero p{
+
+    font-size:21px;
+
+    line-height:1.9;
+
+    color:#d9efff;
+
+}
+
+.hero-buttons{
+
+    margin-top:45px;
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+}
+
+/* ========================= */
+/* BUTTONS */
+/* ========================= */
+
+.btn{
+margin-top:auto; 
+    padding:18px 34px;
+
+    border-radius:18px;
+
+    text-decoration:none;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:10px;
+
+    transition:0.4s;
+
+}
+
+.whats{
+
+    background:
+    linear-gradient(
+    135deg,
+    #22c55e,
+    #16a34a
+    );
+
+    color:white;
+
+    box-shadow:
+    0 12px 30px rgba(34,197,94,0.25);
+
+}
+
+.whats:hover{
+
+    transform:
+    translateY(-5px);
+
+    box-shadow:
+    0 18px 45px rgba(34,197,94,0.35);
+
+}
+
+.insta{
+
+    background:
+    linear-gradient(
+    135deg,
+    #0ea5e9,
+    #0284c7
+    );
+
+    color:white;
+
+    box-shadow:
+    0 12px 30px rgba(14,165,233,0.25);
+
+}
+
+.insta:hover{
+
+    transform:
+    translateY(-5px);
+
+}
+
+/* ========================= */
+/* GERAL */
+/* ========================= */
+
+section{
+    padding:120px 20px;
+}
+
+.container{
+    max-width:1450px;
+    margin:auto;
+}
+
+.section-title{
+
+    text-align:center;
+
+    margin-bottom:80px;
+
+}
+
+.section-title h2{
+
+    font-size:58px;
+
+    color:#08233a;
+
+    margin-bottom:15px;
+
+    font-weight:800;
+
+}
+
+.section-title p{
+
+    color:#607587;
+
+    font-size:19px;
+
+}
+
+/* ========================= */
+/* GRID */
+/* ========================= */
+
+.grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(340px,1fr));
+
+    gap:35px;
+
+}
+
+/* ========================= */
+/* CARD PREMIUM */
+/* ========================= */
+
+.card{
+
+    background:rgba(255,255,255,0.97);
+
+    border-radius:34px;
+
+    padding:42px 38px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    border:
+    1px solid rgba(255,255,255,0.7);
+
+    backdrop-filter:blur(18px);
+
+    box-shadow:
+    0 15px 45px rgba(15,23,42,0.08);
+
+    transition:0.45s cubic-bezier(.17,.67,.3,1.33);
+display:flex;
+
+flex-direction:column;
+}
+
+.card:hover{
+
+    transform:
+    translateY(-14px)
+    scale(1.015);
+
+    box-shadow:
+    0 25px 65px rgba(14,165,233,0.16);
+
+}
+
+.card::before{
+
+    content:'';
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:8px;
+
+    background:
+    linear-gradient(
+    90deg,
+    #0ea5e9,
+    #38bdf8,
+    #7dd3fc
+    );
+
+}
+
+.card h3{
+
+    font-size:34px;
+
+    font-weight:800;
+
+    color:#0a3554;
+
+    line-height:1.2;
+
+    letter-spacing:-1.3px;
+
+    margin-bottom:22px;
+
+}
+
+.card p{
+
+    font-size:18px;
+
+    line-height:1.9;
+
+    color:#5c6d7c;
+
+    margin-bottom:30px;
+
+}
+
+/* ========================= */
+/* DESTAQUE */
+/* ========================= */
+
+.highlight{
+
+    margin-top:70px;
+
+    background:
+    linear-gradient(
+    135deg,
+    #08233a,
+    #0ea5e9
+    );
+
+    padding:90px;
+
+    border-radius:42px;
+
+    text-align:center;
+
+    color:white;
+
+}
+
+.highlight h3{
+
+    font-size:54px;
+
+    margin-bottom:25px;
+
+    font-weight:800;
+
+}
+
+.highlight p{
+
+    font-size:21px;
+
+    line-height:1.9;
+
+}
+
+/* ========================= */
+/* FLOAT WHATS */
+/* ========================= */
+
+.whatsapp-float{
+
+    position:fixed;
+
+    right:25px;
+
+    bottom:25px;
+
+    width:78px;
+
+    height:78px;
+
+    background:#22c55e;
+
+    color:white;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-decoration:none;
+
+    font-size:38px;
+
+    box-shadow:
+    0 18px 40px rgba(0,0,0,0.25);
+
+    z-index:999;
+
+    transition:0.4s;
+
+}
+
+.whatsapp-float:hover{
+
+    transform:
+    scale(1.12);
+
+}
+
+/* ========================= */
+/* FOOTER */
+/* ========================= */
+
+footer{
+
+    background:#05121e;
+
+    color:white;
+
+    text-align:center;
+
+    padding:90px 20px;
+
+}
+
+footer h2{
+
+    font-size:42px;
+
+    margin-bottom:18px;
+
+}
+
+footer p{
+
+    color:#d7ecff;
+
+    line-height:1.9;
+
+}
+
+/* ========================= */
+/* ANIMAÇÃO */
+/* ========================= */
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+/* ========================= */
+/* RESPONSIVO */
+/* ========================= */
+
+@media(max-width:900px){
+
+    .hero h1{
+        font-size:48px;
+    }
+
+    .hero p{
+        font-size:18px;
+    }
+
+    .section-title h2{
+        font-size:40px;
+    }
+
+    .menu{
+        display:none;
+    }
+
+    .highlight{
+        padding:45px 25px;
+    }
+
+    .highlight h3{
+        font-size:35px;
+    }
+
+    .card{
+        padding:35px 30px;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+
+<nav>
+
+<div class="logo">
+
+<img src="logo sl.webp" alt="Saúde Livre">
+
+</div>
+
+<div class="menu">
+
+<a href="#vacinas">Vacinas</a>
+<a href="#sobre">Sobre</a>
+<a href="#contato">Contato</a>
+
+</div>
+
+</nav>
+
+</header>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>
+
+Proteção completa para sua <span>família</span>
+
+</h1>
+
+<p>
+
+A Saúde Livre é uma clínica especializada em vacinação localizada em Valparaíso de Goiás.
+
+Trabalhamos com vacinas acelulares, consideradas mais puras e associadas a reações mais leves.
+
+Realizamos atendimento domiciliar, vacinação imediata na clínica e agendamentos.
+
+</p>
+
+<div class="hero-buttons">
+
+<a href="https://wa.me/61982090814" class="btn whats">
+
+<i class="fa-brands fa-whatsapp"></i>
+
+WhatsApp
+
+</a>
+
+<a href="https://instagram.com/saudelivrevalparaiso" class="btn insta">
+
+<i class="fa-brands fa-instagram"></i>
+
+Instagram
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- VACINAS -->
+
+<section id="vacinas">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>Vacinas Disponíveis</h2>
+
+<p>
+
+Confira as vacinas disponíveis na Saúde Livre.
+
+</p>
+
+</div>
+
+<div class="grid">
+
+<div class="card">
+<h3>💉 PREVENAR 20</h3>
+<p>Proteção contra pneumonia, meningite e doenças pneumocócicas.</p>
+<a href="#" class="btn whats vacina-btn" data-vacina="PREVENAR 20">
+
+<i class="fa-brands fa-whatsapp"></i>
+
+Consultar disponibilidade
+
+</a>
+</div>
+
+<div class="card">
+<h3>💉 ABRYSVO</h3>
+<p>Proteção contra doenças respiratórias causadas pelo vírus sincicial respiratório.</p>
+<a href="#" class="btn whats vacina-btn" data-vacina="ABRYSVO">
+
+<i class="fa-brands fa-whatsapp"></i>
+
+Consultar disponibilidade
+
+</a>
+</div>
+
+<div class="card">
+<h3>💉 ACWY</h3>
+<p>Proteção contra meningites meningocócicas tipos A, C, W e Y.</p>
+<a href="#" class="btn whats vacina-btn" data-vacina="ACWY">
+
+<i class="fa-brands fa-whatsapp"></i>
+
+Consultar disponibilidade
+
+</a>
+</div>
+
+<div class="card">
+<h3>💉 BEYFORTUS</h3>
+<p>Proteção contra vírus sincicial respiratório em bebês.</p>
+<a href="#" class="btn whats vacina-btn" data-vacina="BEYFORTUS">
+    <i class="fa-brands fa-whatsapp"></i>
+    Consultar disponibilidade
+</a>
+</div>
+
+<div class="card">
+<h3>💉 VAXNEUVANCE</h3>
+<p>Proteção contra doenças pneumocócicas.</p>
+<a href="#" class="btn whats vacina-btn" data-vacina="VAXNEUVANCE">
+    <i class="fa-brands fa-whatsapp"></i>
+    Consultar disponibilidade
+</a>
+</div>
+
+<div class="card">
+<h3>💉 ROTA VÍRUS</h3>
+<p>Ajuda a prevenir diarreias graves causadas por rotavírus.</p>
+<a href="#" class="btn whats vacina-btn" data-vacina="ROTA VÍRUS">
+    <i class="fa-brands fa-whatsapp"></i>
+    Consultar disponibilidade
+</a>
+</div>
+
+<div class="card">
+<h3>💉 HPV</h3>
+<p>Proteção contra HPV e cânceres relacionados ao vírus.</p>
+<a href="#" class="btn whats vacina-btn" data-vacina="HPV">
+    <i class="fa-brands fa-whatsapp"></i>
+    Consultar disponibilidade
+</a>
+
+</div>
+
+<div class="card">
+<h3>💉 HEPATITE A ADULTO</h3>
+<p>Proteção contra hepatite A em adultos.</p>
+<a href="#" class="btn whats vacina-btn" data-vacina="HEPATITE A ADULTO">
+    <i class="fa-brands fa-whatsapp"></i>
+    Consultar disponibilidade
+</a>
+</div>
+
+<div class="card">
+<h3>💉 HEPATITE A PEDIÁTRICA</h3>
+<p>Proteção contra hepatite A em crianças.</p>
+<a href="#" class="btn whats vacina-btn" data-vacina="HEPATITE A PEDIÁTRICA">
+    <i class="fa-brands fa-whatsapp"></i>
+    Consultar disponibilidade
+</a>
+</div>
+
+<div class="card">
+<h3>💉 PENTAVALENTE</h3>
+<p>Proteção contra difteria, tétano, coqueluche, hepatite B e Hib.</p>
+<a href="#" class="btn whats vacina-btn" data-vacina="PENTAVALENTE">
+    <i class="fa-brands fa-whatsapp"></i>
+    Consultar disponibilidade
+</a>
+</div>
+
+<div class="card">
+<h3>💉 Q DENGA</h3>
+<p>Proteção contra os principais sorotipos da dengue.</p>
+<a href="#" class="btn whats vacina-btn" data-vacina="Q DENGA">
+    <i class="fa-brands fa-whatsapp"></i>
+    Consultar disponibilidade
+</a>
+</div>
+
+<div class="card">
+<h3>💉 DTPA + IPV</h3>
+<p>Proteção contra difteria, tétano, coqueluche e poliomielite.</p>
+<a href="#" class="btn whats vacina-btn" data-vacina="DTPA + IPV">
+    <i class="fa-brands fa-whatsapp"></i>
+    Consultar disponibilidade
+</a>
+</div>
+
+<div class="card">
+<h3>💉 HEXAVALENTE</h3>
+<p>Proteção contra difteria, tétano, coqueluche, hepatite B, poliomielite e Hib.</p>
+<a href="#" class="btn whats vacina-btn" data-vacina="HEXAVALENTE">
+    <i class="fa-brands fa-whatsapp"></i>
+    Consultar disponibilidade
+</a>
+</div>
+
+<div class="card">
+<h3>💉 FEBRE AMARELA</h3>
+<p>Proteção contra febre amarela.</p>
+<a href="#" class="btn whats vacina-btn" data-vacina="FEBRE AMARELA">
+    <i class="fa-brands fa-whatsapp"></i>
+    Consultar disponibilidade
+</a>
+</div>
+
+<div class="card">
+<h3>💉 MENINGO B</h3>
+<p>Proteção contra meningite meningocócica tipo B.</p>
+<a href="#" class="btn whats vacina-btn" data-vacina="MENINGO B">
+    <i class="fa-brands fa-whatsapp"></i>
+    Consultar disponibilidade
+</a>
+</div>
+
+<div class="card">
+<h3>💉 HERPES-ZÓSTER</h3>
+<p>Proteção contra herpes-zóster e suas complicações.</p>
+<a href="#" class="btn whats vacina-btn" data-vacina="HERPES-ZÓSTER">
+    <i class="fa-brands fa-whatsapp"></i>
+    Consultar disponibilidade
+</a>
+</div>
+
+<div class="card">
+<h3>💉 AREXVY</h3>
+<p>Proteção contra doenças respiratórias causadas pelo vírus sincicial respiratório.</p>
+<a href="#" class="btn whats vacina-btn" data-vacina="AREXVY">
+    <i class="fa-brands fa-whatsapp"></i>
+    Consultar disponibilidade
+</a>
+</div>
+
+<div class="card">
+<h3>💉 TRÍPLICE VIRAL</h3>
+<p>Proteção contra sarampo, caxumba e rubéola.</p>
+<a href="#" class="btn whats vacina-btn" data-vacina="TRÍPLICE VIRAL">
+    <i class="fa-brands fa-whatsapp"></i>
+    Consultar disponibilidade
+</a>
+</div>
+
+<div class="card">
+<h3>💉 INFLUVAC</h3>
+<p>Proteção anual contra os principais vírus da gripe.</p>
+<a href="#" class="btn whats vacina-btn" data-vacina="INFLUVAC">
+    <i class="fa-brands fa-whatsapp"></i>
+    Consultar disponibilidade
+</a>
+</div>
+
+<div class="card">
+<h3>💉 REFORTRIX</h3>
+<p>Proteção contra difteria, tétano e coqueluche.</p>
+<a href="#" class="btn whats vacina-btn" data-vacina="REFORTRIX">
+    <i class="fa-brands fa-whatsapp"></i>
+    Consultar disponibilidade
+</a>
+</div>
+
+<div class="card">
+<h3>💉 VARICELA</h3>
+<p>Proteção contra catapora.</p>
+<a href="#" class="btn whats vacina-btn" data-vacina="VARICELA">
+    <i class="fa-brands fa-whatsapp"></i>
+    Consultar disponibilidade
+</a>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- SOBRE -->
+
+<section id="sobre">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>Por que escolher a Saúde Livre?</h2>
+
+<p>
+
+Tecnologia, proteção e atendimento humanizado.
+
+</p>
+
+</div>
+
+<div class="grid">
+
+<div class="card">
+
+<h3>🏠 Atendimento Domiciliar</h3>
+
+<p>
+
+Levamos segurança até sua casa com aplicação domiciliar para crianças, adultos e idosos.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>⚡ Vacinação Imediata</h3>
+
+<p>
+
+Você pode comparecer à clínica e se vacinar na mesma hora com rapidez e segurança.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>🛡 Vacinas Acelulares</h3>
+
+<p>
+
+Utilizamos vacinas acelulares, consideradas mais puras e associadas a reações mais leves.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="highlight">
+
+<h3>
+
+Mais proteção. Mais cuidado.
+
+</h3>
+
+<p>
+
+Nossa missão é oferecer proteção de alta qualidade com atendimento moderno,
+vacinas premium e cuidado especializado para toda a família.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- CONTATO -->
+<!-- PROTOCOLOS AVANÇADOS -->
+
+<section id="protocolos">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>Protocolos Injetáveis e Nutrição Especializada</h2>
+
+<p>
+
+A Saúde Livre oferece acompanhamento especializado com foco em prevenção, qualidade de vida, imunidade e bem-estar, através de protocolos personalizados e atendimento profissional.
+
+</p>
+
+</div>
+
+<div class="grid">
+
+<!-- PROTOCOLOS INJETÁVEIS -->
+
+<div class="card">
+
+<h3>💉 Protocolos Injetáveis</h3>
+
+<p>
+
+Realizamos protocolos injetáveis personalizados com acompanhamento profissional, voltados para suporte imunológico, disposição, recuperação nutricional e qualidade de vida.
+
+Os protocolos são elaborados de forma individualizada, respeitando as necessidades e objetivos de cada paciente.
+
+</p>
+<a href="protocolos.html" class="btn insta">
+
+Saiba mais
+
+</a>
+</div>
+
+<!-- NUTRICIONISTA -->
+
+<div class="card">
+
+<h3>🥗 Nutrição Especializada</h3>
+
+<p>
+
+Contamos com acompanhamento nutricional especializado, auxiliando pacientes em processos de reeducação alimentar, fortalecimento imunológico, saúde metabólica e melhora da qualidade de vida.
+
+Cada atendimento é realizado de forma personalizada e humanizada.
+
+</p>
+<a href="nutricao.html" class="btn insta">
+
+Saiba mais
+
+</a>
+</div>
+
+<!-- ACOMPANHAMENTO -->
+
+<div class="card">
+
+<h3>🏢 Nossa Clínica</h3>
+
+<p>
+
+Conheça a estrutura da Saúde Livre, nosso ambiente,
+recepção, espaço de atendimento e toda a experiência
+pensada para oferecer conforto, segurança e qualidade.
+
+</p>
+<a href="clinica.html" class="btn insta">
+
+Saiba mais
+</a>
+</div>
+
+</div>
+
+<!-- DESTAQUE -->
+
+<div class="highlight">
+
+<h3>
+
+Saúde, prevenção e bem-estar em um só lugar
+
+</h3>
+
+<p>
+
+Na Saúde Livre, unimos vacinação premium, protocolos especializados e acompanhamento nutricional para proporcionar uma experiência completa de cuidado e prevenção.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+<section id="contato">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>Contato</h2>
+
+<p>
+
+Entre em contato com nossa equipe.
+
+</p>
+
+</div>
+
+<div class="grid">
+
+<div class="card">
+
+<h3>📍 Localização</h3>
+
+<p>
+
+Valparaíso de Goiás - GO
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>📱 WhatsApp</h3>
+
+<p>
+
+Atendimento rápido para agendamentos e dúvidas.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>📸 Instagram</h3>
+
+<p>
+
+Acompanhe campanhas e novidades da Saúde Livre.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+<h2>
+
+Saúde Livre
+
+</h2>
+
+<p>
+
+📍 Valparaíso de Goiás - GO
+
+</p>
+
+<p>
+
+🕒 Segunda a Sexta • 08h às 18h
+
+</p>
+
+<p>
+
+🕒 Sábado • 08h às 12h
+
+</p>
+
+<a href="https://maps.app.goo.gl/2JtT1HnZqQCftR7GA"
+target="_blank"
+class="map-btn">
+
+📍 Abrir localização
+
+</a>
+
+</footer>
+
+<h2>Saúde Livre</h2>
+
+<p>
+
+Clínica especializada em vacinação • Valparaíso de Goiás
+
+</p>
+
+</footer>
+
+<!-- BOTÃO FLUTUANTE -->
+
+<a href="https://wa.me/61982090814" class="whatsapp-float">
+
+<i class="fa-brands fa-whatsapp"></i>
+
+</footer>
+<!-- INSTAGRAM FLUTUANTE -->
+
+<a href="https://instagram.com/saudelivrevalparaiso"
+class="instagram-float"
+target="_blank">
+
+<i class="fa-brands fa-instagram"></i>
+
+</a>
+<script>
+
+const buttons = document.querySelectorAll('.vacina-btn');
+
+buttons.forEach(button => {
+
+    button.addEventListener('click', function(event) {
+
+        event.preventDefault();
+
+        const vacina = button.dataset.vacina;
+
+        const mensagem =
+        `Olá! Tenho interesse na vacina ${vacina}. Gostaria de verificar disponibilidade e mais informações.`;
+
+        const numero = '61982090814';
+
+        const url =
+        `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
+
+        window.open(url, '_blank');
+
+    });
+
+});
+
+</script>
+</body>
+
+</html>

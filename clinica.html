@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Nossa Clínica | Saúde Livre</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#eef7fc;
+    color:#08233a;
+}
+
+header{
+    background:linear-gradient(135deg,#061522,#0c4a6e);
+    padding:28px 20px;
+    position:sticky;
+    top:0;
+    z-index:999;
+}
+
+.nav{
+    max-width:1300px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo img{
+    height:82px;
+    width:auto;
+    object-fit:contain;
+}
+
+.back-btn{
+    color:white;
+    text-decoration:none;
+    font-weight:600;
+    padding:14px 24px;
+    border-radius:14px;
+    background:rgba(255,255,255,0.1);
+    transition:0.3s;
+}
+
+.back-btn:hover{
+    background:rgba(255,255,255,0.2);
+}
+
+.hero{
+    background:linear-gradient(135deg,#08233a,#0ea5e9);
+    padding:110px 20px;
+    text-align:center;
+    color:white;
+}
+
+.hero h1{
+    font-size:62px;
+    margin-bottom:24px;
+    font-weight:800;
+}
+
+.hero p{
+    max-width:900px;
+    margin:auto;
+    line-height:1.9;
+    font-size:20px;
+    color:#d7ecff;
+}
+
+.container{
+    max-width:1300px;
+    margin:auto;
+    padding:90px 20px;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:70px;
+}
+
+.section-title h2{
+    font-size:48px;
+    margin-bottom:18px;
+}
+
+.section-title p{
+    color:#607587;
+    font-size:18px;
+    line-height:1.8;
+}
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:28px;
+}
+
+.gallery img{
+    width:100%;
+    height:320px;
+    object-fit:cover;
+    border-radius:28px;
+    box-shadow:0 18px 45px rgba(15,23,42,0.12);
+    transition:0.4s;
+}
+
+.gallery img:hover{
+    transform:scale(1.04);
+    box-shadow:0 25px 60px rgba(14,165,233,0.22);
+}
+
+.highlight{
+    margin-top:75px;
+    background:linear-gradient(135deg,#08233a,#0ea5e9);
+    padding:70px;
+    border-radius:40px;
+    text-align:center;
+    color:white;
+}
+
+.highlight h2{
+    font-size:42px;
+    margin-bottom:20px;
+}
+
+.highlight p{
+    max-width:900px;
+    margin:auto;
+    color:#d7ecff;
+    font-size:19px;
+    line-height:1.9;
+}
+
+footer{
+    background:#05121e;
+    padding:70px 20px;
+    text-align:center;
+    color:white;
+}
+
+footer p{
+    color:#c9e5ff;
+}
+
+@media(max-width:800px){
+    .hero h1{
+        font-size:42px;
+    }
+
+    .section-title h2{
+        font-size:34px;
+    }
+
+    .highlight{
+        padding:45px 25px;
+    }
+
+    .gallery img{
+        height:260px;
+    }
+
+    .logo img{
+        height:65px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="nav">
+        <div class="logo">
+            <img src="logo sl.webp" alt="Saúde Livre">
+        </div>
+
+        <a href="index.html" class="back-btn">← Voltar ao início</a>
+    </div>
+</header>
+
+<section class="hero">
+    <h1>Nossa Clínica</h1>
+
+    <p>
+        Conheça a estrutura da Saúde Livre, um ambiente preparado para oferecer
+        conforto, segurança, qualidade e uma experiência humanizada em cada atendimento.
+    </p>
+</section>
+
+<section>
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Conheça nossa estrutura</h2>
+
+            <p>
+                Nossa clínica foi pensada para acolher pacientes com conforto,
+                organização e segurança, oferecendo um espaço moderno para vacinação,
+                protocolos e atendimento especializado.
+            </p>
+        </div>
+
+        <div class="gallery">
+            <img src="foto frente.webp" alt="Foto da clínica Saúde Livre">
+            <img src="foto balcao.webp" alt="Foto da clínica Saúde Livre">
+            <img src="foto cadeira.webp" alt="Foto da clínica Saúde Livre">
+            <img src="foto freezer.webp" alt="Foto da clínica Saúde Livre">
+            <img src="foto banheiro.webp" alt="Foto da clínica Saúde Livre">
+            <img src="foto bolsa.webp" alt="Foto da clínica Saúde Livre">
+            <img src="foto girafa.webp" alt="Foto da clínica Saúde Livre">
+            <img src="foto pc.webp" alt="Foto da clínica Saúde Livre">
+        </div>
+
+        <div class="highlight">
+            <h2>Ambiente seguro e acolhedor</h2>
+
+            <p>
+                Na Saúde Livre, cada detalhe do nosso espaço foi pensado para proporcionar
+                uma experiência mais tranquila, moderna e confortável para toda a família.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    <h2>Saúde Livre</h2>
+    <p>Clínica de vacinação, protocolos e bem-estar • Valparaíso de Goiás</p>
+</footer>
+
+</body>
+</html>

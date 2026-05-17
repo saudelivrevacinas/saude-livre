@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Nutrição Especializada | Saúde Livre</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#eef7fc;
+    color:#08233a;
+}
+
+/* HEADER */
+
+header{
+    background:linear-gradient(135deg,#061522,#0c4a6e);
+    padding:28px 20px;
+    position:sticky;
+    top:0;
+    z-index:999;
+}
+
+.nav{
+    max-width:1300px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo img{
+    height:82px;
+    width:auto;
+    object-fit:contain;
+}
+
+.back-btn{
+    color:white;
+    text-decoration:none;
+    font-weight:600;
+    padding:14px 24px;
+    border-radius:14px;
+    background:rgba(255,255,255,0.1);
+    transition:0.3s;
+}
+
+.back-btn:hover{
+    background:rgba(255,255,255,0.2);
+}
+
+/* HERO */
+
+.hero{
+    background:linear-gradient(135deg,#08233a,#0ea5e9);
+    padding:110px 20px;
+    text-align:center;
+    color:white;
+}
+
+.hero h1{
+    font-size:62px;
+    margin-bottom:24px;
+    font-weight:800;
+}
+
+.hero p{
+    max-width:900px;
+    margin:auto;
+    line-height:1.9;
+    font-size:20px;
+    color:#d7ecff;
+}
+
+/* CONTAINER */
+
+.container{
+    max-width:1300px;
+    margin:auto;
+    padding:90px 20px;
+}
+
+/* TITLES */
+
+.section-title{
+    text-align:center;
+    margin-bottom:70px;
+}
+
+.section-title h2{
+    font-size:48px;
+    margin-bottom:18px;
+}
+
+.section-title p{
+    color:#607587;
+    font-size:18px;
+}
+
+/* GRID */
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:35px;
+}
+
+/* CARDS */
+
+.card{
+    background:white;
+    padding:42px;
+    border-radius:32px;
+    box-shadow:0 18px 45px rgba(15,23,42,0.08);
+    border-top:8px solid #0ea5e9;
+    transition:0.4s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 25px 60px rgba(14,165,233,0.18);
+}
+
+.card h3{
+    font-size:30px;
+    margin-bottom:22px;
+    color:#0c4a6e;
+}
+
+.card p{
+    color:#5f7488;
+    line-height:1.9;
+    font-size:17px;
+}
+
+/* HIGHLIGHT */
+
+.highlight{
+    margin-top:70px;
+    background:linear-gradient(135deg,#08233a,#0ea5e9);
+    padding:70px;
+    border-radius:40px;
+    text-align:center;
+    color:white;
+}
+
+.highlight h2{
+    font-size:42px;
+    margin-bottom:20px;
+}
+
+.highlight p{
+    font-size:19px;
+    line-height:1.9;
+    max-width:900px;
+    margin:auto;
+    color:#d7ecff;
+}
+
+/* BUTTON */
+
+.btn{
+    margin-top:28px;
+    display:inline-flex;
+    align-items:center;
+    gap:12px;
+    padding:18px 34px;
+    border-radius:18px;
+    text-decoration:none;
+    font-weight:700;
+    transition:0.3s;
+}
+
+.whats{
+    background:#22c55e;
+    color:white;
+}
+
+.whats:hover{
+    transform:scale(1.05);
+}
+
+/* FOOTER */
+
+footer{
+    background:#05121e;
+    padding:70px 20px;
+    text-align:center;
+    color:white;
+}
+
+footer h2{
+    margin-bottom:15px;
+}
+
+footer p{
+    color:#c9e5ff;
+}
+
+/* WHATS FLOAT */
+
+.whatsapp-float{
+    position:fixed;
+    right:25px;
+    bottom:25px;
+    width:78px;
+    height:78px;
+    border-radius:50%;
+    background:#22c55e;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
+    font-size:38px;
+    box-shadow:0 18px 40px rgba(0,0,0,0.25);
+    z-index:999;
+    transition:0.4s;
+}
+
+.whatsapp-float:hover{
+    transform:scale(1.12);
+}
+
+/* RESPONSIVO */
+
+@media(max-width:800px){
+
+    .hero h1{
+        font-size:42px;
+    }
+
+    .section-title h2{
+        font-size:34px;
+    }
+
+    .highlight{
+        padding:45px 25px;
+    }
+
+    .highlight h2{
+        font-size:32px;
+    }
+
+    .logo img{
+        height:65px;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+
+<div class="nav">
+
+<div class="logo">
+
+<img src="logo sl.webp" alt="Saúde Livre">
+
+</div>
+
+<a href="index.html" class="back-btn">
+
+← Voltar ao início
+
+</a>
+
+</div>
+
+</header>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<h1>
+
+Nutrição Especializada
+
+</h1>
+
+<p>
+
+Na Saúde Livre contamos com profissionais especializados em nutrição,
+oferecendo acompanhamento individualizado com foco em saúde,
+qualidade de vida, equilíbrio nutricional, imunidade e bem-estar.
+
+</p>
+
+</section>
+
+<!-- NUTRIÇÃO -->
+
+<section>
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>
+
+Acompanhamento nutricional
+
+</h2>
+
+<p>
+
+Cuidado profissional, humanizado e personalizado para cada paciente.
+
+</p>
+
+</div>
+
+<div class="grid">
+
+<div class="card">
+
+<h3>
+
+🥗 Reeducação alimentar
+
+</h3>
+
+<p>
+
+Acompanhamento nutricional voltado para melhora dos hábitos alimentares,
+equilíbrio nutricional e construção de uma rotina alimentar mais saudável.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+🛡 Fortalecimento imunológico
+
+</h3>
+
+<p>
+
+Estratégias nutricionais focadas em suporte imunológico,
+qualidade de vida e manutenção da saúde do organismo.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+⚡ Energia e disposição
+
+</h3>
+
+<p>
+
+Orientação nutricional voltada para disposição,
+energia, bem-estar físico e melhora da rotina diária.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+✨ Qualidade de vida
+
+</h3>
+
+<p>
+
+Atendimento individualizado conforme necessidades,
+objetivos e rotina de cada paciente.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+👩‍⚕️ Profissionais especializados
+
+</h3>
+
+<p>
+
+Nossa equipe conta com profissionais especializados em nutrição,
+priorizando um atendimento humanizado, moderno e individualizado.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+🩺 Acompanhamento personalizado
+
+</h3>
+
+<p>
+
+Cada acompanhamento é realizado de forma personalizada,
+buscando equilíbrio, saúde e melhores resultados para cada paciente.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="highlight">
+
+<h2>
+
+Cuidado nutricional completo
+
+</h2>
+
+<p>
+
+Na Saúde Livre, acreditamos que a nutrição é uma parte fundamental
+da saúde e do bem-estar. Por isso, oferecemos acompanhamento especializado,
+individualizado e focado na qualidade de vida dos pacientes.
+
+</p>
+
+<a href="https://wa.me/5561982090814?text=Olá! Tenho interesse no acompanhamento nutricional da Saúde Livre. Gostaria de mais informações."
+class="btn whats"
+target="_blank">
+
+<i class="fa-brands fa-whatsapp"></i>
+
+Falar no WhatsApp
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+<h2>
+
+Saúde Livre
+
+</h2>
+
+<p>
+
+Clínica de vacinação, protocolos e bem-estar • Valparaíso de Goiás
+
+</p>
+
+</footer>
+
+<!-- WHATS FLOAT -->
+
+<a href="https://wa.me/5561982090814"
+class="whatsapp-float"
+target="_blank">
+
+<i class="fa-brands fa-whatsapp"></i>
+
+</a>
+
+</body>
+
+</html>
