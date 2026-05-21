@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vacina | Saúde Livre</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+body{background:#f4fbff;color:#08233a}
+header{background:#08233a;color:white;padding:28px 20px}
+.header-content{max-width:1200px;margin:auto;display:flex;justify-content:space-between;align-items:center}
+.header-content img{height:70px}
+.header-content a{color:white;text-decoration:none;font-weight:600}
+
+.container{max-width:1200px;margin:auto;padding:70px 20px}
+.product{display:grid;grid-template-columns:1.3fr .7fr;gap:40px}
+.info,.buy-box{background:white;border-radius:32px;padding:42px;box-shadow:0 18px 45px rgba(15,23,42,.08)}
+.tag{display:inline-block;background:#e0f2fe;color:#0369a1;padding:8px 18px;border-radius:999px;font-size:14px;font-weight:700;margin-bottom:20px}
+h1{font-size:52px;margin-bottom:18px}
+p{font-size:18px;line-height:1.8;color:#52677a;margin-bottom:18px}
+ul{margin-top:25px;padding-left:22px}
+li{font-size:17px;color:#52677a;margin-bottom:14px}
+.price{font-size:46px;font-weight:800;margin-bottom:12px}
+.small{color:#667085;margin-bottom:28px}
+.btn{width:100%;display:flex;align-items:center;justify-content:center;gap:10px;padding:18px;border-radius:18px;text-decoration:none;font-weight:800;transition:.4s}
+.buy{background:linear-gradient(135deg,#22c55e,#16a34a);color:white;margin-bottom:16px}
+.back{background:#08233a;color:white}
+.btn:hover{transform:translateY(-5px)}
+
+@media(max-width:900px){
+.product{grid-template-columns:1fr}
+h1{font-size:38px}
+}
+.btn:hover{
+transform:translateY(-5px);
+}
+
+/* COLA.btn:hover{
+transform:translateY(-5px);
+}
+
+/* COLA AQUI */
+
+.carrinho{
+    position:fixed;
+    right:-420px;
+    top:0;
+    width:380px;
+    height:100vh;
+    background:white;
+    box-shadow:-10px 0 35px rgba(0,0,0,0.15);
+    padding:35px;
+    z-index:9999;
+    transition:0.4s;
+}
+
+.carrinho.ativo{
+    right:0;
+} AQUI */
+.carrinho{
+    position:fixed;
+    top:0;
+    right:-420px;
+    width:380px;
+    height:100vh;
+    background:white;
+    padding:35px;
+    box-shadow:-15px 0 40px rgba(0,0,0,0.15);
+    z-index:9999;
+    transition:0.4s;
+}
+
+.carrinho.ativo{
+    right:0;
+}
+
+.carrinho h3{
+    font-size:28px;
+    margin-bottom:20px;
+}
+
+.item-carrinho{
+    padding:15px;
+    border-radius:14px;
+    background:#f4f8fb;
+    margin-bottom:15px;
+
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    gap:8px;
+}
+
+.finalizar-btn{
+    width:100%;
+    padding:16px;
+    border:none;
+    border-radius:16px;
+    background:#16a34a;
+    color:white;
+    font-weight:800;
+    cursor:pointer; 
+    transition:0.3s;
+}
+.finalizar-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 25px rgba(0,0,0,0.22);
+}
+.compra-box{
+    margin:22px 0 28px;
+}
+
+.parcelamento{
+    margin-bottom:22px;
+    font-size:16px;
+    color:#08233a;
+}
+
+.parcelamento strong{
+    font-weight:800;
+}
+
+.quantidade-box{
+    margin-bottom:22px;
+}
+
+.quantidade-box label{
+    display:block;
+    font-weight:700;
+    margin-bottom:10px;
+}
+
+.quantidade-controle{
+    display:flex;
+    align-items:center;
+    width:100%;
+    max-width:230px;
+    border:1px solid #dbe7f0;
+    border-radius:16px;
+    overflow:hidden;
+    background:white;
+}
+
+.quantidade-controle button{
+
+    appearance:none;
+    -webkit-appearance:none;
+    width: 48px;
+    min-width:48px;
+    height: 48px;
+    
+
+    padding:0;
+
+
+    border:none;
+    border-radius:12px;
+
+    background:linear-gradient(135deg,#ffffff,#e8f4ff);
+
+    color:#0b083a;
+
+    font-size:20px;
+    font-weight:800;
+
+    cursor:pointer;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    transition:0.25s ease;
+
+    box-shadow:
+    0 4px 12px rgba(0,0,0,0.08);
+}
+
+.quantidade-controle button:hover{
+    transform:translateY(-2px) scale(1.08);
+
+    background:linear-gradient(135deg,#0ea5e9,#0284c7);
+
+    color:white;
+
+    box-shadow:
+    0 10px 22px rgba(14,165,233,0.35);
+}
+
+.quantidade-controle button:active{
+    transform:scale(0.92);
+}
+.quantidade-controle input{
+    width:100%;
+    height:48px;
+    border:none;
+    text-align:center;
+    font-size:18px;
+    font-weight:700;
+    outline:none;
+}
+.zerar-btn{
+    width:100%;
+    margin-top:12px;
+    padding:15px;
+    border:none;
+    border-radius:16px;
+    background:#ef4444;
+    color:white;
+    font-weight:800;
+    cursor:pointer;
+    transition:0.3s;
+}
+.zerar-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 25px rgba(0,0,0,0.22);
+}
+
+.btn-add{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+
+    width:100%;
+    margin-top:18px;
+    padding:13px;
+
+    border-radius:16px;
+
+    background:linear-gradient(90deg,#0ea5e9,#0284c7);
+    color:white;
+    text-decoration:none;
+    font-weight:700;
+    font-size:15px;
+
+    transition:0.3s;
+}
+
+
+
+.btn-add:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 25px rgba(14,165,233,0.35);
+}
+.btn-menos,
+.btn-mais,
+.btn-lixeira{
+
+width:38px;
+height:38px;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+border:none;
+border-radius:12px;
+
+background:linear-gradient(135deg,#ffffff,#e8f4ff);
+
+color:#08233a;
+
+font-size:15px;
+font-weight:800;
+
+cursor:pointer;
+
+transition:0.25s ease;
+
+box-shadow:0 4px 12px rgba(0,0,0,0.08);
+
+margin-left:6px;
+}
+
+.btn-menos:hover,
+.btn-mais:hover,
+.btn-lixeira:hover{
+
+transform:translateY(-2px) scale(1.08);
+
+background:linear-gradient(135deg,#0ea5e9,#0284c7);
+
+color:white;
+
+box-shadow:0 10px 22px rgba(14,165,233,0.35);
+}
+.fechar-carrinho{
+    position:absolute;
+    top:22px;
+    right:22px;
+
+    width:42px;
+    height:42px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:0;
+    border:none;
+    border-radius:12px;
+
+    background:#f4f8fb;
+    color:#08233a;
+
+    font-size:20px;
+    line-height:1;
+
+    cursor:pointer;
+
+    transition:0.25s;
+}
+
+.fechar-carrinho:hover{
+    transform:translateX(3px);
+    background:#08233a;
+    color:white;
+}
+
+.overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.35);
+
+    opacity:0;
+    visibility:hidden;
+
+    transition:0.3s;
+}
+
+.overlay.ativo{
+    opacity:1;
+    visibility:visible;
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+<div class="header-content">
+<img src="logo sl.webp" alt="Saúde Livre">
+<a href="index.html">← Voltar</a>
+</div>
+</header>
+
+<div class="container">
+<div class="product">
+
+<div class="info">
+<div class="tag" id="categoria"></div>
+<h1 id="titulo"></h1>
+<p id="descricao1"></p>
+<p id="descricao2"></p>
+<p id="descricao3"></p>
+
+<ul id="lista"></ul>
+</div>
+
+<div class="buy-box">
+<div class="price" id="preco"></div>
+<div class="small">Valores sujeitos à disponibilidade e confirmação com a clínica.</div>
+
+<div class="compra-box">
+
+    <div class="parcelamento">
+        <span>ou em até</span>
+        <strong>6x sem juros no cartão</strong>
+    </div>
+
+    <div class="quantidade-box">
+
+        <label>Quantidade:</label>
+
+        <div class="quantidade-controle">
+
+            <button type="button" onclick="diminuir()">−</button>
+
+            <input type="number" id="quantidade" value="1" min="1">
+
+            <button type="button" onclick="aumentar()">+</button>
+        </div>
+
+    </div>
+
+</div>
+<a href="#" class="btn buy">
+<i class="fa-solid fa-cart-shopping"></i>
+Comprar agora
+</a>
+
+<a href="index.html" class="btn back">
+<i class="fa-solid fa-arrow-left"></i>
+Voltar
+</a>
+</div>
+
+</div>
+</div>
+
+<script>
+const vacinas = {
+"prevenar20":{
+titulo:"💉 PREVENAR 20",
+categoria:"Vacina pneumocócica",
+preco:"R$ 519",
+descricao1:"A PREVENAR 20 ajuda na proteção contra doenças pneumocócicas, como pneumonia, meningite e infecções graves causadas pelo pneumococo.",
+descricao2:"Possui cobertura ampliada contra diferentes sorotipos, oferecendo uma proteção mais abrangente.",
+descricao3:"A indicação pode variar conforme idade, histórico de saúde e orientação profissional.",
+lista:[
+"Ajuda na proteção contra pneumonia pneumocócica",
+"Auxilia na prevenção de meningite bacteriana",
+"Indicada para diferentes faixas etárias conforme orientação médica",
+"Aplicação rápida e segura"
+]
+},
+
+"abrysvo":{
+titulo:"💉 ABRYSVO",
+categoria:"Vacina contra VSR",
+preco:"R$ 1.199",
+descricao1:"A ABRYSVO ajuda na proteção contra o vírus sincicial respiratório, conhecido como VSR.",
+descricao2:"O VSR pode causar infecções respiratórias importantes, especialmente em bebês, idosos e grupos de risco.",
+descricao3:"A indicação deve ser avaliada por profissional de saúde conforme o perfil do paciente.",
+lista:[
+"Proteção contra vírus sincicial respiratório",
+"Auxilia na prevenção de quadros respiratórios",
+"Pode ser indicada para públicos específicos",
+"Avaliação profissional recomendada"
+]
+},
+
+"acwy":{
+titulo:"💉 ACWY",
+categoria:"Vacina meningocócica",
+preco:"R$ 339",
+descricao1:"A vacina ACWY ajuda na proteção contra meningites meningocócicas dos tipos A, C, W e Y.",
+descricao2:"A meningite meningocócica pode evoluir rapidamente e exige prevenção adequada.",
+descricao3:"É uma vacina importante para crianças, adolescentes, adultos e viajantes, conforme indicação.",
+lista:[
+"Proteção contra sorogrupos A, C, W e Y",
+"Ajuda na prevenção de meningite meningocócica",
+"Indicada conforme faixa etária e risco",
+"Pode ser exigida em algumas viagens"
+]
+},
+
+"beyfortus":{
+titulo:"💉 BEYFORTUS",
+categoria:"Proteção contra VSR",
+preco:"R$ 3.199",
+descricao1:"BEYFORTUS é utilizado para ajudar na proteção de bebês contra infecções causadas pelo VSR.",
+descricao2:"O vírus sincicial respiratório pode causar bronquiolite e outros quadros respiratórios em crianças pequenas.",
+descricao3:"A indicação deve ser feita conforme avaliação profissional.",
+lista:[
+"Voltado para proteção de bebês",
+"Ajuda a reduzir risco de infecções respiratórias por VSR",
+"Indicação conforme idade e condição clínica",
+"Aplicação com orientação profissional"
+]
+},
+
+"vaxneuvance":{
+titulo:"💉 VAXNEUVANCE",
+categoria:"Vacina pneumocócica",
+preco:"R$ 219",
+descricao1:"A VAXNEUVANCE ajuda na proteção contra doenças causadas pelo pneumococo.",
+descricao2:"Essas doenças podem incluir pneumonia, meningite e infecções invasivas.",
+descricao3:"A indicação varia conforme idade, histórico vacinal e recomendação profissional.",
+lista:[
+"Proteção contra doenças pneumocócicas",
+"Auxilia na prevenção de pneumonia e meningite",
+"Indicada conforme calendário e avaliação",
+"Aplicação segura e acompanhada"
+]
+},
+
+"rotavirus":{
+titulo:"💉 ROTA VÍRUS",
+categoria:"Vacina contra rotavírus",
+preco:"R$ 279",
+descricao1:"A vacina contra rotavírus ajuda a prevenir diarreias graves causadas pelo rotavírus.",
+descricao2:"É especialmente importante para bebês, pois o rotavírus pode causar desidratação intensa.",
+descricao3:"Deve ser aplicada dentro da faixa etária recomendada.",
+lista:[
+"Ajuda a prevenir diarreia grave",
+"Importante para bebês",
+"Contribui para reduzir risco de desidratação",
+"Aplicação conforme idade recomendada"
+]
+},
+
+"hpv":{
+titulo:"💉 HPV",
+categoria:"Vacina contra HPV",
+preco:"R$ 969",
+descricao1:"A vacina HPV ajuda na proteção contra tipos do papilomavírus humano.",
+descricao2:"O HPV está relacionado a verrugas genitais e alguns tipos de câncer.",
+descricao3:"A vacinação é uma forma importante de prevenção para adolescentes e adultos, conforme orientação.",
+lista:[
+"Proteção contra tipos de HPV",
+"Auxilia na prevenção de cânceres relacionados ao vírus",
+"Indicada para diferentes faixas etárias",
+"Prevenção importante antes da exposição ao vírus"
+]
+},
+
+"hepatite-a-adulto":{
+titulo:"💉 HEPATITE A ADULTO",
+categoria:"Vacina hepatite A",
+preco:"R$ 189",
+descricao1:"A vacina Hepatite A Adulto ajuda na proteção contra o vírus da hepatite A.",
+descricao2:"A hepatite A pode afetar o fígado e ser transmitida principalmente por água ou alimentos contaminados.",
+descricao3:"É indicada para adultos conforme histórico vacinal e risco de exposição.",
+lista:[
+"Proteção contra hepatite A",
+"Ajuda a prevenir infecção no fígado",
+"Indicada para adultos",
+"Importante para viajantes e grupos de risco"
+]
+},
+
+"hepatite-a-pediatrica":{
+titulo:"💉 HEPATITE A PEDIÁTRICA",
+categoria:"Vacina hepatite A infantil",
+preco:"R$ 179",
+descricao1:"A vacina Hepatite A Pediátrica ajuda na proteção de crianças contra o vírus da hepatite A.",
+descricao2:"A vacinação contribui para prevenir infecção hepática causada pelo vírus.",
+descricao3:"A aplicação deve seguir orientação profissional e calendário adequado.",
+lista:[
+"Proteção infantil contra hepatite A",
+"Ajuda a prevenir infecção no fígado",
+"Indicada para crianças",
+"Aplicação conforme idade recomendada"
+]
+},
+
+"pentavalente":{
+titulo:"💉 PENTAVALENTE",
+categoria:"Vacina combinada",
+preco:"R$ 219",
+descricao1:"A vacina pentavalente oferece proteção contra múltiplas doenças em uma única aplicação.",
+descricao2:"Ela ajuda na prevenção de difteria, tétano, coqueluche, hepatite B e Hib.",
+descricao3:"É utilizada principalmente em crianças conforme calendário vacinal.",
+lista:[
+"Proteção contra cinco doenças",
+"Reduz número de aplicações",
+"Importante no calendário infantil",
+"Aplicação conforme orientação profissional"
+]
+},
+
+"q-denga":{
+titulo:"💉 Q DENGA",
+categoria:"Vacina contra dengue",
+preco:"R$ 435",
+descricao1:"A Q DENGA ajuda na proteção contra a dengue.",
+descricao2:"A dengue é uma doença transmitida pelo mosquito Aedes aegypti e pode causar sintomas importantes.",
+descricao3:"A indicação depende da idade, histórico e avaliação profissional.",
+lista:[
+"Ajuda na proteção contra dengue",
+"Contribui para prevenção de formas sintomáticas",
+"Indicada conforme faixa etária",
+"Avaliação profissional recomendada"
+]
+},
+
+"dtpa-ipv":{
+titulo:"💉 DTPA + IPV",
+categoria:"Vacina combinada",
+preco:"R$ 199",
+descricao1:"A vacina DTPA + IPV ajuda na proteção contra difteria, tétano, coqueluche e poliomielite.",
+descricao2:"É uma vacina combinada que facilita a proteção contra várias doenças.",
+descricao3:"Pode ser indicada como reforço conforme idade e histórico vacinal.",
+lista:[
+"Proteção contra quatro doenças",
+"Pode ser usada como reforço",
+"Ajuda na prevenção da poliomielite",
+"Aplicação conforme recomendação profissional"
+]
+},
+
+"hexavalente":{
+titulo:"💉 HEXAVALENTE",
+categoria:"Vacina combinada",
+preco:"R$ 249",
+descricao1:"A hexavalente ajuda na proteção contra seis doenças em uma única vacina.",
+descricao2:"Inclui proteção contra difteria, tétano, coqueluche, hepatite B, poliomielite e Hib.",
+descricao3:"É muito utilizada no calendário infantil conforme recomendação profissional.",
+lista:[
+"Proteção contra seis doenças",
+"Reduz número de aplicações",
+"Indicada para crianças",
+"Aplicação conforme calendário vacinal"
+]
+},
+
+"febre-amarela":{
+titulo:"💉 FEBRE AMARELA",
+categoria:"Vacina viral",
+preco:"R$ 159",
+descricao1:"A vacina contra febre amarela ajuda na proteção contra a doença transmitida por mosquitos.",
+descricao2:"A febre amarela pode causar quadros graves, especialmente em áreas de risco.",
+descricao3:"A indicação deve considerar idade, local de residência, viagens e condições de saúde.",
+lista:[
+"Proteção contra febre amarela",
+"Importante para áreas de risco",
+"Pode ser necessária para viagens",
+"Avaliação profissional em casos específicos"
+]
+},
+
+"meningo-b":{
+titulo:"💉 MENINGO B",
+categoria:"Vacina meningocócica B",
+preco:"R$ 739",
+descricao1:"A vacina Meningo B ajuda na proteção contra meningite meningocócica causada pelo sorogrupo B.",
+descricao2:"A meningite meningocócica pode evoluir rapidamente e causar complicações graves.",
+descricao3:"A indicação pode variar conforme idade e risco individual.",
+lista:[
+"Proteção contra meningococo B",
+"Ajuda na prevenção de meningite",
+"Indicada conforme faixa etária",
+"Importante para crianças, adolescentes e grupos de risco"
+]
+},
+
+"herpes-zoster":{
+titulo:"💉 HERPES-ZÓSTER",
+categoria:"Vacina contra herpes-zóster",
+preco:"R$ 919",
+descricao1:"A vacina herpes-zóster ajuda na proteção contra o herpes-zóster, conhecido popularmente como cobreiro.",
+descricao2:"A doença pode causar dor intensa e complicações, principalmente em adultos mais velhos.",
+descricao3:"A indicação depende da idade e avaliação profissional.",
+lista:[
+"Ajuda na proteção contra herpes-zóster",
+"Contribui para reduzir risco de complicações",
+"Indicada principalmente para adultos",
+"Avaliação profissional recomendada"
+]
+},
+
+"arexvy":{
+titulo:"💉 AREXVY",
+categoria:"Vacina contra VSR",
+preco:"R$ 1.589",
+descricao1:"A AREXVY ajuda na proteção contra o vírus sincicial respiratório.",
+descricao2:"O VSR pode causar infecções respiratórias importantes, especialmente em adultos mais velhos.",
+descricao3:"A indicação deve ser avaliada conforme idade e fatores de risco.",
+lista:[
+"Proteção contra vírus sincicial respiratório",
+"Indicada conforme avaliação profissional",
+"Auxilia na prevenção de quadros respiratórios",
+"Importante para grupos de maior risco"
+]
+},
+
+"triplice-viral":{
+titulo:"💉 TRÍPLICE VIRAL",
+categoria:"Vacina viral combinada",
+preco:"R$ 119",
+descricao1:"A tríplice viral ajuda na proteção contra sarampo, caxumba e rubéola.",
+descricao2:"Essas doenças podem causar surtos e complicações, sendo a vacinação uma forma importante de prevenção.",
+descricao3:"A indicação deve seguir o calendário vacinal e histórico do paciente.",
+lista:[
+"Proteção contra sarampo",
+"Proteção contra caxumba",
+"Proteção contra rubéola",
+"Importante para atualização vacinal"
+]
+},
+
+"influvac":{
+titulo:"💉 INFLUVAC",
+categoria:"Vacina contra gripe",
+preco:"R$ 99",
+descricao1:"A Influvac ajuda na proteção contra os principais vírus da gripe.",
+descricao2:"A vacinação anual é importante porque os vírus influenza podem mudar a cada ano.",
+descricao3:"É indicada para crianças, adultos, idosos e grupos de risco conforme orientação.",
+lista:[
+"Proteção contra influenza",
+"Vacinação anual recomendada",
+"Ajuda a reduzir risco de complicações",
+"Importante para grupos vulneráveis"
+]
+},
+
+"refortrix":{
+titulo:"💉 REFORTRIX",
+categoria:"Vacina combinada",
+preco:"R$ 199",
+descricao1:"A Refortrix ajuda na proteção contra difteria, tétano e coqueluche.",
+descricao2:"É muito utilizada como dose de reforço em diferentes fases da vida.",
+descricao3:"A indicação depende do histórico vacinal e orientação profissional.",
+lista:[
+"Proteção contra difteria",
+"Proteção contra tétano",
+"Proteção contra coqueluche",
+"Indicada como reforço vacinal"
+]
+},
+
+"varicela":{
+titulo:"💉 VARICELA",
+categoria:"Vacina contra catapora",
+preco:"R$ 279",
+descricao1:"A vacina varicela ajuda na proteção contra a catapora.",
+descricao2:"A catapora é uma doença viral contagiosa que pode causar febre, lesões na pele e complicações em alguns casos.",
+descricao3:"A indicação depende da idade e histórico vacinal.",
+lista:[
+"Ajuda na proteção contra catapora",
+"Reduz risco de formas graves",
+"Indicada conforme calendário vacinal",
+"Importante para crianças e pessoas não imunizadas"
+]
+}
+};
+
+const params = new URLSearchParams(window.location.search);
+const id = params.get("v");
+
+const vacina = vacinas[id] || vacinas["prevenar20"];
+
+document.getElementById("titulo").innerText = vacina.titulo;
+document.getElementById("categoria").innerText = vacina.categoria;
+document.getElementById("preco").innerText = vacina.preco;
+document.getElementById("descricao1").innerText = vacina.descricao1;
+document.getElementById("descricao2").innerText = vacina.descricao2;
+document.getElementById("descricao3").innerText = vacina.descricao3;
+
+const lista = document.getElementById("lista");
+vacina.lista.forEach(item => {
+const li = document.createElement("li");
+li.innerText = "✔ " + item;
+lista.appendChild(li);
+});
+</script>
+<script>
+
+function aumentar(){
+    let qtd = document.getElementById("quantidade");
+    qtd.value = Number(qtd.value) + 1;
+}
+
+function diminuir(){
+    let qtd = document.getElementById("quantidade");
+
+    if(Number(qtd.value) > 1){
+        qtd.value = Number(qtd.value) - 1;
+    }
+}
+
+function atualizarCarrinho(){
+    const carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+
+    const itens = document.getElementById("itensCarrinho");
+    const totalBox = document.getElementById("totalCarrinho");
+
+    itens.innerHTML = "";
+
+    let total = 0;
+
+    carrinho.forEach((item, index) => {
+
+        total += item.preco * item.quantidade;
+
+        itens.innerHTML += `
+        <div class="item-carrinho">
+
+           <button class="btn-menos" onclick="diminuirItem(${index})">
+            <i class="fa-solid fa-minus"></i>
+            </button>
+
+            <span>${item.nome} x ${item.quantidade}</span>
+
+            <button class="btn-mais" onclick="aumentarItem(${index})">
+            <i class="fa-solid fa-plus"></i>
+            </button>
+
+            <button class="btn-lixeira" onclick="removerItem(${index})">
+            <i class="fa-solid fa-trash"></i>
+</button>
+
+        </div>
+        `;
+    });
+
+    totalBox.innerHTML =
+    `Total: R$ ${total.toLocaleString("pt-BR")}`;
+}
+
+function salvarCarrinho(carrinho){
+    localStorage.setItem("carrinho", JSON.stringify(carrinho));
+    atualizarCarrinho();
+}
+
+function aumentarItem(index){
+    let carrinho =
+    JSON.parse(localStorage.getItem("carrinho")) || [];
+
+    carrinho[index].quantidade++;
+
+    salvarCarrinho(carrinho);
+}
+
+function diminuirItem(index){
+    let carrinho =
+    JSON.parse(localStorage.getItem("carrinho")) || [];
+
+    if(carrinho[index].quantidade > 1){
+        carrinho[index].quantidade--;
+    } else {
+        carrinho.splice(index, 1);
+    }
+
+    salvarCarrinho(carrinho);
+}
+
+function removerItem(index){
+    let carrinho =
+    JSON.parse(localStorage.getItem("carrinho")) || [];
+
+    carrinho.splice(index, 1);
+
+    salvarCarrinho(carrinho);
+}
+
+function zerarCarrinho(){
+    localStorage.removeItem("carrinho");
+    atualizarCarrinho();
+}
+
+const botaoComprar = document.querySelector(".buy");
+
+botaoComprar.addEventListener("click", function(event){
+
+    event.preventDefault();
+
+    const nomeVacina =
+    document.getElementById("titulo").innerText;
+
+    const precoTexto =
+    document.getElementById("preco").innerText;
+
+    const quantidade =
+    Number(document.getElementById("quantidade").value);
+
+    const precoNumero = Number(
+        precoTexto
+        .replace("R$", "")
+        .replace(/\./g, "")
+        .replace(",", ".")
+        .trim()
+    );
+
+    let carrinho =
+    JSON.parse(localStorage.getItem("carrinho")) || [];
+
+    const itemExistente =
+    carrinho.find(item => item.nome === nomeVacina);
+
+    if(itemExistente){
+        itemExistente.quantidade += quantidade;
+    } else {
+
+        carrinho.push({
+            nome: nomeVacina,
+            preco: precoNumero,
+            quantidade: quantidade
+        });
+    }
+
+    localStorage.setItem(
+        "carrinho",
+        JSON.stringify(carrinho)
+    );
+
+    atualizarCarrinho();
+
+    document
+    .querySelector(".carrinho")
+    .classList.add("ativo");
+
+});
+
+atualizarCarrinho();
+function fecharCarrinho(){
+    document.querySelector(".carrinho").classList.remove("ativo");
+}
+</script>
+
+<div class="carrinho">
+
+<button class="fechar-carrinho" onclick="fecharCarrinho()">
+    <i class="fa-solid fa-arrow-left"></i>
+</button>
+
+<h2>
+    
+</h2>
+
+
+<div class="overlay" id="overlay"></div>
+    
+    <h3>🛒 Carrinho</h3>
+    <div id="itensCarrinho"></div>
+    <h2 id="totalCarrinho">
+        Total: R$ 0
+    </h2>
+    <button class="finalizar-btn">
+        Finalizar compra
+    </button>
+    <button class="zerar-btn" onclick="zerarCarrinho()">
+    Zerar carrinho
+</button>
+  <a href="index.html#vacinas" class="btn-add">
+    Adicionar mais vacinas
+    </a>
+</div>
+</body>
+</html>

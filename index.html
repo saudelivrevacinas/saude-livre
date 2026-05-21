@@ -301,7 +301,66 @@ margin-top:auto;
     0 18px 45px rgba(34,197,94,0.35);
 
 }
+.whats:hover{
 
+transform:
+scale(1.05);
+
+}
+
+/* NOVO CODIGO */
+
+.btn-group{
+    display:flex;
+    gap:14px;
+    margin-top:auto;
+}
+
+.btn-group .btn{
+    flex:1;
+    justify-content:center;
+}
+
+.saiba-mais{
+    background:#08233a;
+    color:white;
+}
+
+.comprar-btn{
+    background:linear-gradient(135deg,#22c55e,#16a34a);
+    color:white;
+}
+.btn{
+transition:0.4s;
+}
+
+.btn:hover{
+transform:translateY(-5px);
+}
+.card p{
+    min-height:60px;
+}
+.preco{
+background:#f4f8fb;
+padding:14px;
+border-radius:14px;
+text-align:center;
+font-size:30px;
+font-weight:700;
+color:#0b233a;
+margin-top:18px;
+margin-bottom:22px;
+border:1px solid #dbe7f0;
+}
+
+.preco::before{
+content:"A partir de";
+display:block;
+font-size:13px;
+font-weight:500;
+color:#6b7280;
+margin-bottom:4px;
+}
 .insta{
 
     background:
@@ -409,19 +468,28 @@ section{
 display:flex;
 
 flex-direction:column;
+
+
+min-height:auto;
 }
 
+.vacinas .card{
+    min-height:420px;
+}
+
+#sobre .card{
+    min-height:260px;
+}
 .card:hover{
 
-    transform:
-    translateY(-14px)
-    scale(1.015);
+transform:
+translateY(-14px)
+scale(1.015);
 
-    box-shadow:
-    0 25px 65px rgba(14,165,233,0.16);
+box-shadow:
+0 25px 65px rgba(14,165,233,0.16);
 
 }
-
 .card::before{
 
     content:'';
@@ -727,7 +795,7 @@ Instagram
 
 <!-- VACINAS -->
 
-<section id="vacinas">
+<section class="vacinas" id="vacinas">
 
 <div class="container">
 
@@ -744,210 +812,324 @@ Confira as vacinas disponíveis na Saúde Livre.
 </div>
 
 <div class="grid">
-
 <div class="card">
 <h3>💉 PREVENAR 20</h3>
 <p>Proteção contra pneumonia, meningite e doenças pneumocócicas.</p>
-<a href="#" class="btn whats vacina-btn" data-vacina="PREVENAR 20">
 
-<i class="fa-brands fa-whatsapp"></i>
+<div class="preco">R$ 519</div>
 
-Consultar disponibilidade
+<div class="btn-group">
+
+<a href="#" class="btn comprar-btn" data-vacina="PREVENAR 20">
+<i class="fa-solid fa-cart-shopping"></i>
+Comprar
+</a>
+
+<a href="vacina.html?v=prevenar20" class="btn saiba-mais">
+Saiba mais
 
 </a>
+
 </div>
+</div>
+
 
 <div class="card">
 <h3>💉 ABRYSVO</h3>
 <p>Proteção contra doenças respiratórias causadas pelo vírus sincicial respiratório.</p>
-<a href="#" class="btn whats vacina-btn" data-vacina="ABRYSVO">
 
-<i class="fa-brands fa-whatsapp"></i>
+<div class="preco">R$ 1.199</div>
 
-Consultar disponibilidade
+<div class="btn-group">
 
+<a href="#" class="btn comprar-btn" data-vacina="ABRYSVO">
+<i class="fa-solid fa-cart-shopping"></i>
+Comprar
 </a>
+
+<a href="vacina.html?v=abrysvo" class="btn saiba-mais">
+Saiba mais
+</a>
+
 </div>
+</div>
+
 
 <div class="card">
 <h3>💉 ACWY</h3>
 <p>Proteção contra meningites meningocócicas tipos A, C, W e Y.</p>
-<a href="#" class="btn whats vacina-btn" data-vacina="ACWY">
 
-<i class="fa-brands fa-whatsapp"></i>
+<div class="preco">R$ 339</div>
 
-Consultar disponibilidade
+<div class="btn-group">
 
+<a href="#" class="btn comprar-btn" data-vacina="ACWY">
+<i class="fa-solid fa-cart-shopping"></i>
+Comprar
 </a>
+
+<a href="vacina.html?v=acwy" class="btn saiba-mais">
+Saiba mais
+</a>
+
 </div>
+</div>
+
 
 <div class="card">
 <h3>💉 BEYFORTUS</h3>
 <p>Proteção contra vírus sincicial respiratório em bebês.</p>
-<a href="#" class="btn whats vacina-btn" data-vacina="BEYFORTUS">
-    <i class="fa-brands fa-whatsapp"></i>
-    Consultar disponibilidade
+
+<div class="preco">R$ 3.199</div>
+
+<div class="btn-group">
+
+<a href="#" class="btn comprar-btn" data-vacina="BEYFORTUS">
+<i class="fa-solid fa-cart-shopping"></i>
+Comprar
 </a>
+
+<a href="vacina.html?v=beyfortus" class="btn saiba-mais">
+Saiba mais
+</a>
+
 </div>
+</div>
+
 
 <div class="card">
 <h3>💉 VAXNEUVANCE</h3>
 <p>Proteção contra doenças pneumocócicas.</p>
-<a href="#" class="btn whats vacina-btn" data-vacina="VAXNEUVANCE">
-    <i class="fa-brands fa-whatsapp"></i>
-    Consultar disponibilidade
+
+<div class="preco">R$ 219</div>
+
+<div class="btn-group">
+
+<a href="#" class="btn comprar-btn" data-vacina="VAXNEUVANCE">
+<i class="fa-solid fa-cart-shopping"></i>
+Comprar
 </a>
+
+<a href="vacina.html?v=vaxneuvance" class="btn saiba-mais">
+Saiba mais
+</a>
+
 </div>
+</div>
+
 
 <div class="card">
 <h3>💉 ROTA VÍRUS</h3>
 <p>Ajuda a prevenir diarreias graves causadas por rotavírus.</p>
-<a href="#" class="btn whats vacina-btn" data-vacina="ROTA VÍRUS">
-    <i class="fa-brands fa-whatsapp"></i>
-    Consultar disponibilidade
+
+<div class="preco">R$ 279</div>
+
+<div class="btn-group">
+
+<a href="#" class="btn comprar-btn" data-vacina="ROTA VIRUS">
+<i class="fa-solid fa-cart-shopping"></i>
+Comprar
 </a>
+
+<a href="vacina.html?v=rotavirus" class="btn saiba-mais">
+Saiba mais
+</a>
+
+</div>
 </div>
 
+
+<div class="card">
+<h3>💉 TRÍPLICE VIRAL</h3>
+<p>Proteção contra sarampo, caxumba e rubéola.</p>
+
+<div class="preco">R$ 119</div>
+
+<div class="btn-group">
+
+<a href="#" class="btn comprar-btn" data-vacina="TRÍPLICE VIRAL">
+<i class="fa-solid fa-cart-shopping"></i>
+Comprar
+</a>
+
+<a href="vacina.html?v=triplice-viral" class="btn saiba-mais">
+Saiba mais
+</a>
+
+</div>
+</div>
+
+
+<div class="card">
+<h3>💉 INFLUVAC</h3>
+<p>Proteção anual contra os principais vírus da gripe.</p>
+
+<div class="preco">R$ 99</div>
+
+<div class="btn-group">
+
+<a href="#" class="btn comprar-btn" data-vacina="INFLUVAC">
+<i class="fa-solid fa-cart-shopping"></i>
+Comprar
+</a>
+
+<a href="vacina.html?v=influvac" class="btn saiba-mais">
+Saiba mais
+</a>
+
+</div>
+</div>
+
+
+<div class="card">
+<h3>💉 REFORTRIX</h3>
+<p>Proteção contra difteria, tétano e coqueluche.</p>
+
+<div class="preco">R$ 199</div>
+
+<div class="btn-group">
+
+<a href="#" class="btn comprar-btn" data-vacina="REFORTRIX">
+<i class="fa-solid fa-cart-shopping"></i>
+Comprar
+</a>
+
+<a href="vacina.html?v=refortrix" class="btn saiba-mais">
+Saiba mais
+</a>
+
+</div>
+</div>
+
+
+<div class="card">
+<h3>💉 VARICELA</h3>
+<p>Proteção contra catapora.</p>
+
+<div class="preco">R$ 279</div>
+
+<div class="btn-group">
+
+<a href="#" class="btn comprar-btn" data-vacina="VARICELA">
+<i class="fa-solid fa-cart-shopping"></i>
+Comprar
+</a>
+
+<a href="vacina.html?v=varicela" class="btn saiba-mais">
+Saiba mais
+</a>
+
+</div>
+</div>
 <div class="card">
 <h3>💉 HPV</h3>
 <p>Proteção contra HPV e cânceres relacionados ao vírus.</p>
-<a href="#" class="btn whats vacina-btn" data-vacina="HPV">
-    <i class="fa-brands fa-whatsapp"></i>
-    Consultar disponibilidade
-</a>
-
+<div class="preco">R$ 969</div>
+<div class="btn-group">
+<a href="#" class="btn comprar-btn" data-vacina="HPV"><i class="fa-solid fa-cart-shopping"></i>Comprar</a>
+<a href="vacina.html?v=hpv" class="btn saiba-mais">Saiba mais</a>
+</div>
 </div>
 
 <div class="card">
 <h3>💉 HEPATITE A ADULTO</h3>
 <p>Proteção contra hepatite A em adultos.</p>
-<a href="#" class="btn whats vacina-btn" data-vacina="HEPATITE A ADULTO">
-    <i class="fa-brands fa-whatsapp"></i>
-    Consultar disponibilidade
-</a>
+<div class="preco">R$ 189</div>
+<div class="btn-group">
+<a href="#" class="btn comprar-btn" data-vacina="HEPATITE A ADULTO"><i class="fa-solid fa-cart-shopping"></i>Comprar</a>
+<a href="vacina.html?v=hepatite-a-adulto" class="btn saiba-mais">Saiba mais</a>
+</div>
 </div>
 
 <div class="card">
 <h3>💉 HEPATITE A PEDIÁTRICA</h3>
 <p>Proteção contra hepatite A em crianças.</p>
-<a href="#" class="btn whats vacina-btn" data-vacina="HEPATITE A PEDIÁTRICA">
-    <i class="fa-brands fa-whatsapp"></i>
-    Consultar disponibilidade
-</a>
+<div class="preco">R$ 179</div>
+<div class="btn-group">
+<a href="#" class="btn comprar-btn" data-vacina="HEPATITE A PEDIÁTRICA"><i class="fa-solid fa-cart-shopping"></i>Comprar</a>
+<a href="vacina.html?v=hepatite-a-pediatrica" class="btn saiba-mais">Saiba mais</a>
+</div>
 </div>
 
 <div class="card">
 <h3>💉 PENTAVALENTE</h3>
 <p>Proteção contra difteria, tétano, coqueluche, hepatite B e Hib.</p>
-<a href="#" class="btn whats vacina-btn" data-vacina="PENTAVALENTE">
-    <i class="fa-brands fa-whatsapp"></i>
-    Consultar disponibilidade
-</a>
+<div class="preco">R$ 219</div>
+<div class="btn-group">
+<a href="#" class="btn comprar-btn" data-vacina="PENTAVALENTE"><i class="fa-solid fa-cart-shopping"></i>Comprar</a>
+<a href="vacina.html?v=pentavalente" class="btn saiba-mais">Saiba mais</a>
+</div>
 </div>
 
 <div class="card">
 <h3>💉 Q DENGA</h3>
 <p>Proteção contra os principais sorotipos da dengue.</p>
-<a href="#" class="btn whats vacina-btn" data-vacina="Q DENGA">
-    <i class="fa-brands fa-whatsapp"></i>
-    Consultar disponibilidade
-</a>
+<div class="preco">R$ 435</div>
+<div class="btn-group">
+<a href="#" class="btn comprar-btn" data-vacina="Q DENGA"><i class="fa-solid fa-cart-shopping"></i>Comprar</a>
+<a href="vacina.html?v=q-denga" class="btn saiba-mais">Saiba mais</a>
+</div>
 </div>
 
 <div class="card">
 <h3>💉 DTPA + IPV</h3>
 <p>Proteção contra difteria, tétano, coqueluche e poliomielite.</p>
-<a href="#" class="btn whats vacina-btn" data-vacina="DTPA + IPV">
-    <i class="fa-brands fa-whatsapp"></i>
-    Consultar disponibilidade
-</a>
+<div class="preco">R$ 199</div>
+<div class="btn-group">
+<a href="#" class="btn comprar-btn" data-vacina="DTPA + IPV"><i class="fa-solid fa-cart-shopping"></i>Comprar</a>
+<a href="vacina.html?v=dtpa-ipv" class="btn saiba-mais">Saiba mais</a>
+</div>
 </div>
 
 <div class="card">
 <h3>💉 HEXAVALENTE</h3>
 <p>Proteção contra difteria, tétano, coqueluche, hepatite B, poliomielite e Hib.</p>
-<a href="#" class="btn whats vacina-btn" data-vacina="HEXAVALENTE">
-    <i class="fa-brands fa-whatsapp"></i>
-    Consultar disponibilidade
-</a>
+<div class="preco">R$ 249</div>
+<div class="btn-group">
+<a href="#" class="btn comprar-btn" data-vacina="HEXAVALENTE"><i class="fa-solid fa-cart-shopping"></i>Comprar</a>
+<a href="vacina.html?v=hexavalente" class="btn saiba-mais">Saiba mais</a>
+</div>
 </div>
 
 <div class="card">
 <h3>💉 FEBRE AMARELA</h3>
 <p>Proteção contra febre amarela.</p>
-<a href="#" class="btn whats vacina-btn" data-vacina="FEBRE AMARELA">
-    <i class="fa-brands fa-whatsapp"></i>
-    Consultar disponibilidade
-</a>
+<div class="preco">R$ 159</div>
+<div class="btn-group">
+<a href="#" class="btn comprar-btn" data-vacina="FEBRE AMARELA"><i class="fa-solid fa-cart-shopping"></i>Comprar</a>
+<a href="vacina.html?v=febre-amarela" class="btn saiba-mais">Saiba mais</a>
+</div>
 </div>
 
 <div class="card">
 <h3>💉 MENINGO B</h3>
 <p>Proteção contra meningite meningocócica tipo B.</p>
-<a href="#" class="btn whats vacina-btn" data-vacina="MENINGO B">
-    <i class="fa-brands fa-whatsapp"></i>
-    Consultar disponibilidade
-</a>
+<div class="preco">R$ 739</div>
+<div class="btn-group">
+<a href="#" class="btn comprar-btn" data-vacina="MENINGO B"><i class="fa-solid fa-cart-shopping"></i>Comprar</a>
+<a href="vacina.html?v=meningo-b" class="btn saiba-mais">Saiba mais</a>
+</div>
 </div>
 
 <div class="card">
 <h3>💉 HERPES-ZÓSTER</h3>
 <p>Proteção contra herpes-zóster e suas complicações.</p>
-<a href="#" class="btn whats vacina-btn" data-vacina="HERPES-ZÓSTER">
-    <i class="fa-brands fa-whatsapp"></i>
-    Consultar disponibilidade
-</a>
+<div class="preco">R$ 919</div>
+<div class="btn-group">
+<a href="#" class="btn comprar-btn" data-vacina="HERPES-ZÓSTER"><i class="fa-solid fa-cart-shopping"></i>Comprar</a>
+<a href="vacina.html?v=herpes-zoster" class="btn saiba-mais">Saiba mais</a>
+</div>
 </div>
 
 <div class="card">
 <h3>💉 AREXVY</h3>
 <p>Proteção contra doenças respiratórias causadas pelo vírus sincicial respiratório.</p>
-<a href="#" class="btn whats vacina-btn" data-vacina="AREXVY">
-    <i class="fa-brands fa-whatsapp"></i>
-    Consultar disponibilidade
-</a>
+<div class="preco">R$ 1.589</div>
+<div class="btn-group">
+<a href="#" class="btn comprar-btn" data-vacina="AREXVY"><i class="fa-solid fa-cart-shopping"></i>Comprar</a>
+<a href="vacina.html?v=arexvy" class="btn saiba-mais">Saiba mais</a>
 </div>
-
-<div class="card">
-<h3>💉 TRÍPLICE VIRAL</h3>
-<p>Proteção contra sarampo, caxumba e rubéola.</p>
-<a href="#" class="btn whats vacina-btn" data-vacina="TRÍPLICE VIRAL">
-    <i class="fa-brands fa-whatsapp"></i>
-    Consultar disponibilidade
-</a>
 </div>
-
-<div class="card">
-<h3>💉 INFLUVAC</h3>
-<p>Proteção anual contra os principais vírus da gripe.</p>
-<a href="#" class="btn whats vacina-btn" data-vacina="INFLUVAC">
-    <i class="fa-brands fa-whatsapp"></i>
-    Consultar disponibilidade
-</a>
-</div>
-
-<div class="card">
-<h3>💉 REFORTRIX</h3>
-<p>Proteção contra difteria, tétano e coqueluche.</p>
-<a href="#" class="btn whats vacina-btn" data-vacina="REFORTRIX">
-    <i class="fa-brands fa-whatsapp"></i>
-    Consultar disponibilidade
-</a>
-</div>
-
-<div class="card">
-<h3>💉 VARICELA</h3>
-<p>Proteção contra catapora.</p>
-<a href="#" class="btn whats vacina-btn" data-vacina="VARICELA">
-    <i class="fa-brands fa-whatsapp"></i>
-    Consultar disponibilidade
-</a>
-</div>
-
-</div>
-
-</div>
-
 </section>
 
 <!-- SOBRE -->

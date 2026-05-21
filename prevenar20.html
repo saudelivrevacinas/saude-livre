@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>PREVENAR 20</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#f4fbff;
+color:#08233a;
+}
+
+.topo{
+background:#08233a;
+padding:25px 40px;
+color:white;
+font-size:26px;
+font-weight:700;
+}
+
+.container{
+max-width:1300px;
+margin:auto;
+padding:60px 25px;
+}
+
+.vacina-box{
+display:grid;
+grid-template-columns:1.3fr 0.7fr;
+gap:40px;
+align-items:start;
+}
+
+.info{
+background:white;
+padding:45px;
+border-radius:32px;
+box-shadow:0 10px 35px rgba(0,0,0,0.08);
+}
+
+.info h1{
+font-size:54px;
+margin-bottom:18px;
+color:#08233a;
+}
+
+.info p{
+font-size:18px;
+line-height:1.9;
+margin-bottom:22px;
+color:#425466;
+}
+
+.lista{
+margin-top:25px;
+}
+
+.lista li{
+margin-bottom:14px;
+font-size:17px;
+color:#425466;
+}
+
+.box-compra{
+background:white;
+padding:35px;
+border-radius:32px;
+box-shadow:0 10px 35px rgba(0,0,0,0.08);
+position:sticky;
+top:30px;
+}
+
+.preco{
+font-size:48px;
+font-weight:800;
+color:#08233a;
+margin-bottom:10px;
+}
+
+.parcela{
+color:#667085;
+margin-bottom:30px;
+}
+
+.btn{
+width:100%;
+padding:20px;
+border-radius:18px;
+border:none;
+cursor:pointer;
+font-size:18px;
+font-weight:700;
+transition:0.4s;
+display:flex;
+align-items:center;
+justify-content:center;
+gap:10px;
+text-decoration:none;
+}
+
+.comprar{
+background:linear-gradient(135deg,#22c55e,#16a34a);
+color:white;
+margin-bottom:18px;
+}
+
+.comprar:hover{
+transform:translateY(-5px);
+}
+
+.voltar{
+background:#08233a;
+color:white;
+}
+
+.voltar:hover{
+transform:translateY(-5px);
+}
+
+.tag{
+display:inline-block;
+background:#e0f2fe;
+color:#0369a1;
+padding:8px 18px;
+border-radius:999px;
+font-size:14px;
+font-weight:600;
+margin-bottom:22px;
+}
+
+@media(max-width:980px){
+
+.vacina-box{
+grid-template-columns:1fr;
+}
+
+.info h1{
+font-size:38px;
+}
+
+.preco{
+font-size:38px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="topo">
+Saúde Livre • Clínica de Vacinação
+</div>
+
+<div class="container">
+
+<div class="vacina-box">
+
+<div class="info">
+
+<div class="tag">
+Vacina Pneumocócica
+</div>
+
+<h1>💉 PREVENAR 20</h1>
+
+<p>
+A vacina PREVENAR 20 oferece proteção contra doenças pneumocócicas graves,
+como pneumonia, meningite, bacteremia e infecções respiratórias causadas
+pela bactéria Streptococcus pneumoniae.
+</p>
+
+<p>
+Indicada especialmente para adultos, idosos e pessoas com fatores de risco,
+a vacina ajuda a fortalecer o sistema imunológico e reduzir complicações
+respiratórias graves.
+</p>
+
+<p>
+A PREVENAR 20 possui cobertura ampliada contra 20 sorotipos do pneumococo,
+garantindo proteção mais completa em comparação às versões anteriores.
+</p>
+
+<ul class="lista">
+
+<li>✔ Proteção contra pneumonia pneumocócica</li>
+
+<li>✔ Auxilia na prevenção de meningite bacteriana</li>
+
+<li>✔ Indicada para crianças, adultos e idosos</li>
+
+<li>✔ Alta eficácia imunológica</li>
+
+<li>✔ Aplicação rápida e segura</li>
+
+</ul>
+
+</div>
+
+<div class="box-compra">
+
+<div class="preco">
+R$ 519
+</div>
+
+<div class="parcela">
+Parcelamento disponível no cartão.
+</div>
+
+<button class="btn comprar">
+
+<i class="fa-solid fa-cart-shopping"></i>
+
+Comprar agora
+
+</button>
+
+<a href="index.html" class="btn voltar">
+
+<i class="fa-solid fa-arrow-left"></i>
+
+Voltar
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>
