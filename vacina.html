@@ -289,30 +289,25 @@ color:white;
 box-shadow:0 10px 22px rgba(14,165,233,0.35);
 }
 .fechar-carrinho{
-    position:absolute;
-    top:22px;
-    right:22px;
+width:42px;
+height:42px;
 
-    width:42px;
-    height:42px;
+display:flex;
+align-items:center;
+justify-content:center;
 
-    display:flex;
-    align-items:center;
-    justify-content:center;
+padding:0;
+border:none;
+border-radius:12px;
 
-    padding:0;
-    border:none;
-    border-radius:12px;
+background:#f4f8fb;
+color:#08233a;
 
-    background:#f4f8fb;
-    color:#08233a;
+font-size:20px;
+line-height:1;
 
-    font-size:20px;
-    line-height:1;
-
-    cursor:pointer;
-
-    transition:0.25s;
+cursor:pointer;
+transition:0.25s;
 }
 
 .fechar-carrinho:hover{
@@ -756,7 +751,7 @@ function diminuir(){
 }
 
 function atualizarCarrinho(){
-    const carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+    const carrinho = JSON.parse(sessionStorage.getItem("carrinho")) || [];
 
     const itens = document.getElementById("itensCarrinho");
     const totalBox = document.getElementById("totalCarrinho");
@@ -795,13 +790,13 @@ function atualizarCarrinho(){
 }
 
 function salvarCarrinho(carrinho){
-    localStorage.setItem("carrinho", JSON.stringify(carrinho));
+    sessionStorage.setItem("carrinho", JSON.stringify(carrinho));
     atualizarCarrinho();
 }
 
 function aumentarItem(index){
     let carrinho =
-    JSON.parse(localStorage.getItem("carrinho")) || [];
+    JSON.parse(sessionStorage.getItem("carrinho")) || [];
 
     carrinho[index].quantidade++;
 
@@ -810,7 +805,7 @@ function aumentarItem(index){
 
 function diminuirItem(index){
     let carrinho =
-    JSON.parse(localStorage.getItem("carrinho")) || [];
+    JSON.parse(sessionStorage.getItem("carrinho")) || [];
 
     if(carrinho[index].quantidade > 1){
         carrinho[index].quantidade--;
@@ -823,7 +818,7 @@ function diminuirItem(index){
 
 function removerItem(index){
     let carrinho =
-    JSON.parse(localStorage.getItem("carrinho")) || [];
+    JSON.parse(sessionStorage.getItem("carrinho")) || [];
 
     carrinho.splice(index, 1);
 
@@ -831,7 +826,7 @@ function removerItem(index){
 }
 
 function zerarCarrinho(){
-    localStorage.removeItem("carrinho");
+    sessionStorage.removeItem("carrinho");
     atualizarCarrinho();
 }
 
@@ -859,7 +854,7 @@ botaoComprar.addEventListener("click", function(event){
     );
 
     let carrinho =
-    JSON.parse(localStorage.getItem("carrinho")) || [];
+    JSON.parse(sessionStorage.getItem("carrinho")) || [];
 
     const itemExistente =
     carrinho.find(item => item.nome === nomeVacina);
@@ -875,7 +870,7 @@ botaoComprar.addEventListener("click", function(event){
         });
     }
 
-    localStorage.setItem(
+    sessionStorage.setItem(
         "carrinho",
         JSON.stringify(carrinho)
     );
@@ -888,31 +883,37 @@ botaoComprar.addEventListener("click", function(event){
 
 });
 
-atualizarCarrinho();
-function fecharCarrinho(){
-    document.querySelector(".carrinho").classList.remove("ativo");
+window.addEventListener("load", atualizarCarrinho);
+
+function irCheckout(){
+  const carrinhoSalvo = JSON.parse(sessionStorage.getItem("carrinho")) || [];
+  localStorage.setItem("carrinhoCheckout", JSON.stringify(carrinhoSalvo));
+  window.location.href = "checkout.html";
 }
+
+function fecharCarrinho(){
+  document.querySelector(".carrinho").classList.remove("ativo");
+}
+
 </script>
 
 <div class="carrinho">
+
+<div class="topo-carrinho">
 
 <button class="fechar-carrinho" onclick="fecharCarrinho()">
     <i class="fa-solid fa-arrow-left"></i>
 </button>
 
-<h2>
-    
-</h2>
+<h3>🛒 Carrinho</h3>
 
-
+</div>
     <div class="overlay" id="overlay"></div>
-    <div class="carrinho"></div>
-    <h3>🛒 Carrinho</h3>
     <div id="itensCarrinho"></div>
     <h2 id="totalCarrinho">
         Total: R$ 0
     </h2>
-    <button class="finalizar-btn">
+    <button class="finalizar-btn" onclick="irCheckout()">
         Finalizar compra
     </button>
     <button class="zerar-btn" onclick="zerarCarrinho()">
